@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlack"
+        android:textSize="18dp"
+        android:text="Category Subscription"
+        android:textStyle="bold"
+        android:paddingTop="30px"
+        android:paddingBottom="30px"/>
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/colorBlack"
+        android:text="Event Category"
+        android:paddingLeft="10px"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="30px"
+        android:paddingBottom="30px"
+        android:paddingLeft="20px"
+        android:paddingRight="20px">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <CheckBox
+                android:id="@+id/chkBoxSub1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Class" />
+
+            <CheckBox
+                android:id="@+id/chkBoxSub2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Competition" />
+
+            <CheckBox
+                android:id="@+id/chkBoxSub3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Exhibition" />
+
+            <CheckBox
+                android:id="@+id/chkBoxSub4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fund Raising" />
+
+            <CheckBox
+                android:id="@+id/chkBoxSub5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gathering" />
+
+            <CheckBox
+                android:id="@+id/chkBoxSub6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Meeting" />
+
+            <CheckBox
+                android:id="@+id/chkBoxSub12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Seminar" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+
+            <CheckBox
+                android:id="@+id/chkBoxSub7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Talk" />
+
+            <CheckBox
+                android:id="@+id/chkBoxSub8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Training/Practice" />
+
+            <CheckBox
+                android:id="@+id/chkBoxSub9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Trip" />
+
+            <CheckBox
+                android:id="@+id/chkBoxSub10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Visit" />
+
+            <CheckBox
+                android:id="@+id/chkBoxSub11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Workshop" />
+
+            <CheckBox
+                android:id="@+id/chkBoxSub13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Others" />
+
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnSubscribe"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content"
+            android:text="update subscription"
+            android:background="@drawable/ovalbutton"
+            android:textColor="@android:color/white"
+            android:layout_marginRight="5px"/>
+
+
+        <Button
+            android:id="@+id/btnCancelSubscription"
+            android:layout_width="wrap_content"
+            android:layout_weight="0"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ovalbutton3"
+            android:textColor="@android:color/white"
+            android:text="Cancel" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

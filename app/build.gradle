@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.0"
+    defaultConfig {
+        applicationId "com.example.user.myproject"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    configurations {
+        all*.exclude group: 'com.android.support.v4.app', module: 'support-v4'
+        //all*.exclude group: 'com.android.support', module: 'support-annotations'
+    }
+
+
+}
+
+repositories {
+    maven {
+        url "https://repo.eclipse.org/content/repositories/paho-releases/"
+    }
+}
+
+
+
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+
+
+    compile('org.eclipse.paho:org.eclipse.paho.android.service:1.0.2') {
+        exclude module: 'support-v4'
+    }
+
+    // json library
+
+    //zxing qrcode
+
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.2'
+    compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0'
+    compile 'com.google.code.gson:gson:2.6.2'
+    compile 'com.android.support:design:26.+'
+    compile 'com.google.android.gms:play-services-maps:11.0.4'
+    compile 'me.dm7.barcodescanner:zxing:1.8.4'
+    compile 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    testCompile 'junit:junit:4.12'
+}

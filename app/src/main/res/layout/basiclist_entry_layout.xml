@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="120dp">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:background="@drawable/listbackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/evt_cat"
+                android:layout_width="233dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:maxLength="50"
+                android:text="Education"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="14dp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:text="CCNA Network Talk"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="18dp"
+                android:textColor="@android:color/black"
+                android:layout_width="300dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/evt_title"
+                android:maxLength="30"/>
+
+            <TextView
+                android:text="Date : "
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="16dp"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/evt_date"
+                android:maxLength="65"/>
+
+            <TextView
+                android:text="Time : "
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="16dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/evt_ttime"
+                android:maxLength="65"/>
+
+        </LinearLayout>
+
+            <ImageView
+                android:id="@+id/evt_img"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:layout_margin="30px"
+                app:srcCompat="@drawable/no_image"
+                android:scaleType="fitXY" />
+
+
+    </LinearLayout>
+</LinearLayout>

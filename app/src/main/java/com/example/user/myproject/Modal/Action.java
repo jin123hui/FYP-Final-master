@@ -1,0 +1,164 @@
+package com.example.user.myproject.Modal;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.Locale;
+
+/**
+ * Created by User on 29/9/2017.
+ */
+
+public class Action {
+
+
+    public static String serverTopic = "MY/TARUC/ERS/0000000001/PUB";
+    public static String clientTopic = "MY/TARUC/ERS/0000000002/PUB";
+    public static String reserveCommand = "303030303030303030303030303030303030303030303030";
+    //public static String studentId = "16wmu10392";
+
+    public static String MQTT_USERNAME = "cyumorkp";
+    public static String MQTT_PASSWORD = "DIQ-EjuHMCzJ";
+    public static String MQTT_PORT = "10582";
+
+    //public static String MQTT_ADDRESS = "tcp://m13.cloudmqtt.com:10582";
+    public static String MQTT_ADDRESS = "tcp://172.16.2.247:1883";
+
+    //54 character reserved
+    public static String mqttServer = "tcp://m13.cloudmqtt.com";
+    //public static String mqttTest = "tcp://localhost:1883";
+    public static String mqttTest = "tcp://iot.eclipse.org:1883";
+
+    //Turn Hex to ASCll For example : 31 turn to 1
+    public static String hexToAscii(String hexStr) {
+        StringBuilder output = new StringBuilder("");
+        for (int i = 0; i < hexStr.length(); i += 2) {
+            String str = hexStr.substring(i, i + 2);
+            output.append((char) Integer.parseInt(str, 16));
+        }
+        return output.toString();
+    }
+
+    //Turn ASCll to Hex For example : 1 turn to 31
+    public static String asciiToHex(String asciiStr) {
+        char[] chars = asciiStr.toCharArray();
+        StringBuilder hex = new StringBuilder();
+        for (char ch : chars) {
+            hex.append(Integer.toHexString((int) ch));
+        }
+
+        return hex.toString();
+
+    }
+
+    public static String asciiToHex(int asciiInt){
+        String asciiStr = String.valueOf(asciiInt);
+        char[] chars = asciiStr.toCharArray();
+        StringBuilder hex = new StringBuilder();
+        for (char ch : chars) {
+            hex.append(Integer.toHexString((int) ch));
+        }
+
+        return hex.toString();
+
+    }
+
+
+    public static EncodedStudent[] convertStudentToEncoded(Student[] arr){
+
+        ArrayList<Student> studentArr = new ArrayList<>(Arrays.asList(arr));
+        ArrayList<EncodedStudent> encodedStudArr = new ArrayList<>();
+        for(Student temp: studentArr){
+            EncodedStudent student = new EncodedStudent();
+            student.setStudentId(asciiToHex(temp.getStudentId()));
+            student.setStudenetName(asciiToHex(temp.getStudenetName()));
+            student.setFaculty(asciiToHex(temp.getFaculty()));
+            encodedStudArr.add(student);
+        }
+        EncodedStudent[] result = {};
+        result = encodedStudArr.toArray(result);
+        return result;
+    }
+
+
+
+    public static Student[] decodeStudents(EncodedStudent[] arr){
+
+        ArrayList<EncodedStudent> studentArr = new ArrayList<>(Arrays.asList(arr));
+        ArrayList<Student> encodedStudArr = new ArrayList<>();
+        for(EncodedStudent temp: studentArr){ //
+            Student student = new Student();
+            student.setStudentId(hexToAscii(temp.getStudentId()));
+            student.setStudenetName(hexToAscii(temp.getStudenetName()));
+            student.setFaculty(hexToAscii(temp.getFaculty()));
+            encodedStudArr.add(student);
+        }
+        Student[] result = {};
+        result = encodedStudArr.toArray(result);
+
+        return result;
+
+
+    }
+
+    public static String combineMessage( String commandName,String jsonString){
+        return commandName + reserveCommand + jsonString;
+
+    }
+
+    public static EncodedApplicationEvent[] encodedApplicationEvents(ApplicationEvent[] arr){
+        ArrayList<ApplicationEvent> eventArr = new ArrayList<>(Arrays.asList(arr));
+        ArrayList<EncodedApplicationEvent> encodedEvent = new ArrayList<>();
+        for(ApplicationEvent temp: eventArr){
+            EncodedApplicationEvent event = new EncodedApplicationEvent();
+
+            event.setTimetableId(asciiToHex(temp.getTimetableId()));
+            event.setEventStartTime(asciiToHex(getTime(temp.getStartTime())));
+            event.setEventEndTime(asciiToHex(getTime(temp.getEndTime())));
+
+            event.setEventId(asciiToHex(temp.getEventId()));
+            event.setEventTitle(asciiToHex(temp.getEventTitle()));
+            event.setEventDescription(asciiToHex(temp.getEventDescription()));
+            // event brochyure empty first
+            event.setNoOfParticipants(asciiToHex(temp.getNoOfParticipants()));
+            event.setStatus(asciiToHex(temp.getStatus()));
+            event.setActivityType(asciiToHex(temp.getActivityType()));
+
+            encodedEvent.add(event);
+
+        }
+        EncodedApplicationEvent[] result = {};
+        result = encodedEvent.toArray(result);
+        return result;
+
+    }
+
+    public static ApplicationEvent[] decodeApplicationEvent(EncodedApplicationEvent[] arr){
+            return null;
+
+    }
+
+
+    public static String displayDate(GregorianCalendar gc) {
+        String dateString = String.format("%02d", gc.get(Calendar.DATE))
+                + " " + gc.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.ENGLISH ) + " "
+                + String.format("%02d", gc.get(Calendar.YEAR));
+        return dateString;
+
+    }
+
+
+    public static String getTime(GregorianCalendar gc) {
+        String dateString = String.format("%02d", gc.get(Calendar.DATE))
+                + "/" + String.format("%02d", (gc.get(Calendar.MONTH) + 1)) + "/"
+                + String.format("%02d", gc.get(Calendar.YEAR)) + "    "
+                + String.format("%02d", gc.get(Calendar.HOUR_OF_DAY)) + ":"
+                + String.format("%02d", gc.get(Calendar.MINUTE)) + ":"
+                + String.format("%02d", gc.get(Calendar.SECOND));
+        return dateString;
+
+    }
+
+
+}

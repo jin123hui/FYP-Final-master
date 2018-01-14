@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="200dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/listbackground"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="400dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/evt_cat"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:maxLength="30"
+                android:text="Education"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="14dp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/evt_title"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="10dp"
+                android:maxLength="30"
+                android:text="CCNA Network Talk"
+                android:textColor="@android:color/black"
+                android:textSize="18dp" />
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp">
+
+                <TextView
+                    android:text="Date"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="55dp"
+                    android:layout_weight="0"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                        android:id="@+id/evt_date"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_weight="1"
+                        android:maxLength="65"
+                        android:text=": "
+                        android:textColor="@android:color/holo_red_dark"
+                        android:textSize="18dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp">
+
+                <TextView
+                    android:text="Time"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="55dp"
+                    android:layout_weight="0"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/evt_time"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_weight="1"
+                    android:maxLength="65"
+                    android:text=": "
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="18dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp">
+
+                <TextView
+                    android:text="Venue"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="55dp"
+                    android:layout_weight="0"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/evt_venue"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_weight="1"
+                    android:maxLength="65"
+                    android:text=": "
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="18dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="3dp"
+                android:background="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp">
+
+                <TextView
+                    android:text="Remaining Time Left :"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="0"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/evt_remaining"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_weight="1"
+                    android:maxLength="65"
+                    android:text=" "
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="18dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+            <ImageView
+                android:id="@+id/evt_img"
+                android:layout_width="130dp"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:layout_margin="30px"
+                app:srcCompat="@drawable/no_image"
+                android:scaleType="fitXY" />
+
+
+
+    </LinearLayout>
+</LinearLayout>
