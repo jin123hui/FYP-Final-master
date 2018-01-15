@@ -22,13 +22,15 @@ public class Action {
     public static String MQTT_PASSWORD = "DIQ-EjuHMCzJ";
     public static String MQTT_PORT = "10582";
 
-    //public static String MQTT_ADDRESS = "tcp://m13.cloudmqtt.com:10582";
+    //Symposium
     public static String MQTT_ADDRESS = "tcp://172.16.2.247:1883";
+    //Own
+    //public static String MQTT_ADDRESS = "tcp://iot.eclipse.org:1883";
 
     //54 character reserved
-    public static String mqttServer = "tcp://m13.cloudmqtt.com";
+    //public static String mqttServer = "tcp://m13.cloudmqtt.com";
     //public static String mqttTest = "tcp://localhost:1883";
-    public static String mqttTest = "tcp://iot.eclipse.org:1883";
+    //public static String mqttTest = "tcp://iot.eclipse.org:1883";
 
     //Turn Hex to ASCll For example : 31 turn to 1
     public static String hexToAscii(String hexStr) {

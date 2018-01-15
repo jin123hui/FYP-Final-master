@@ -139,6 +139,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             focusView.requestFocus();
         } else {
             pDialog = ProgressDialog.show(LoginActivity.this, "", "Login...");
+            pDialog.setCancelable(true);
 
             String clientId = MqttClient.generateClientId();
             client = new MqttAndroidClient(this.getApplicationContext(), Action.MQTT_ADDRESS,

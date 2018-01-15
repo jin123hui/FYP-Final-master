@@ -19,7 +19,6 @@
         <item>Talk</item>
         <item>Seminar</item>
         <item>Workshop</item>
-        <item>Others</item>
         <item>Training/Practice</item>
         <item>Visit</item>
         <item>Fund Raising</item>
@@ -28,6 +27,14 @@
         <item>Trip</item>
         <item>Gathering</item>
         <item>Competition</item>
+        <item>Annual General Meeting</item>
+        <item>Camp</item>
+        <item>Performance</item>
+        <item>Nite</item>
+        <item>Conference</item>
+        <item>Sports Carnival</item>
+        <item>Treasure Hunt</item>
+        <item>Others</item>
 
     </string-array>
 
@@ -38,7 +45,6 @@
         <item>Talk</item>
         <item>Seminar</item>
         <item>Workshop</item>
-        <item>Others</item>
         <item>Training/Practice</item>
         <item>Visit</item>
         <item>Fund Raising</item>
@@ -47,6 +53,14 @@
         <item>Trip</item>
         <item>Gathering</item>
         <item>Competition</item>
+        <item>Annual General Meeting</item>
+        <item>Camp</item>
+        <item>Performance</item>
+        <item>Nite</item>
+        <item>Conference</item>
+        <item>Sports Carnival</item>
+        <item>Treasure Hunt</item>
+        <item>Others</item>
 
     </string-array>
 

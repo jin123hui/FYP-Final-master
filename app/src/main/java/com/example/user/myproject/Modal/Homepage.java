@@ -223,6 +223,13 @@ public class Homepage extends AppCompatActivity
         CheckBox chkBox8 = (CheckBox)mView.findViewById(R.id.chkBoxSub11);
         CheckBox chkBox9 = (CheckBox)mView.findViewById(R.id.chkBoxSub12);
         CheckBox chkBox10 = (CheckBox)mView.findViewById(R.id.chkBoxSub13);
+        CheckBox chkBox11 = (CheckBox)mView.findViewById(R.id.chkBoxSub14);
+        CheckBox chkBox12 = (CheckBox)mView.findViewById(R.id.chkBoxSub15);
+        CheckBox chkBox13 = (CheckBox)mView.findViewById(R.id.chkBoxSub16);
+        CheckBox chkBox14 = (CheckBox)mView.findViewById(R.id.chkBoxSub17);
+        CheckBox chkBox15 = (CheckBox)mView.findViewById(R.id.chkBoxSub18);
+        CheckBox chkBox16 = (CheckBox)mView.findViewById(R.id.chkBoxSub19);
+        CheckBox chkBox17 = (CheckBox)mView.findViewById(R.id.chkBoxSub20);
 
 
         final ArrayList<CheckBox> checkBoxList = new ArrayList<CheckBox>();
@@ -239,6 +246,14 @@ public class Homepage extends AppCompatActivity
         checkBoxList.add(chkBox8);
         checkBoxList.add(chkBox9);
         checkBoxList.add(chkBox10);
+        checkBoxList.add(chkBox11);
+        checkBoxList.add(chkBox12);
+        checkBoxList.add(chkBox13);
+        checkBoxList.add(chkBox14);
+        checkBoxList.add(chkBox15);
+        checkBoxList.add(chkBox16);
+        checkBoxList.add(chkBox17);
+
 
         for (CheckBox temp : checkBoxList){
             for (String msg: subscriptionList){

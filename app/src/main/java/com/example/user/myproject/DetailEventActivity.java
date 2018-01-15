@@ -885,7 +885,9 @@ public class DetailEventActivity extends AppCompatActivity implements OnMapReady
         protected Bitmap doInBackground(String... params) {
             Bitmap myBitmap = null;
             try {
+                //Symposium
                 URL url = new URL("http://172.16.2.242/phpMQTT-master/files/get_image.php?timetableId="+params[0]);// + evt.getTimetableId());
+                //URL url = new URL("http://192.168.0.6/phpMQTT-master/files/get_image.php?timetableId="+params[0]);
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 connection.setDoInput(true);
                 connection.connect();

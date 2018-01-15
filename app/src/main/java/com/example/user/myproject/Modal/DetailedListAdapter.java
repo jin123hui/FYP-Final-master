@@ -102,7 +102,9 @@ public class DetailedListAdapter extends ArrayAdapter<ApplicationEvent> {
             Bitmap myBitmap = null;
             //String ngrok = "c3091b38.ngrok.io";
             try {
+                //Symposium
                 URL url = new URL("http://172.16.2.242/phpMQTT-master/files/get_image.php?timetableId="+params[0]);// + evt.getTimetableId());
+                //URL url = new URL("http://192.168.0.6/phpMQTT-master/files/get_image.php?timetableId="+params[0]);
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 connection.setDoInput(true);
                 connection.connect();

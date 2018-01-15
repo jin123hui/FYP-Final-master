@@ -56,7 +56,7 @@ public class UpdateGroupRegistrationActivity extends AppCompatActivity {
     StudentListView studentListView;
     String leaderId = "";
     int seatAvailable = 0;
-    int timetableId = 0;
+    String timetableId = "";
     ProgressDialog pd;
     private MqttAndroidClient client;
     private MqttAndroidClient client2;
@@ -81,7 +81,7 @@ public class UpdateGroupRegistrationActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 if(arrayList == null){
-                    Toast.makeText(getApplicationContext(),"Group information invalid!! cannot insert studnent",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Group information invalid!! cannot insert student",Toast.LENGTH_LONG).show();
                 }else if (arrayList.size() >= seatAvailable){
                     Toast.makeText(getApplicationContext(),"Student is full, cannot add more student",Toast.LENGTH_LONG).show();
                 }else{
@@ -106,15 +106,15 @@ public class UpdateGroupRegistrationActivity extends AppCompatActivity {
 
             leaderId = bundle.getString("LEADERID");
             try {
-                timetableId = bundle.getInt("TIMETABLEID");
+                timetableId = bundle.getString("TIMETABLEID");
             }catch (Exception ex){
-                timetableId = 0;
+                timetableId = "";
             }
 
         }else{
             leaderId = "Nothing";
 
-            timetableId = 0;
+            timetableId = "";
 
             Toast.makeText(getApplicationContext(),"No student's data found, return to home page!!",Toast.LENGTH_LONG).show();
 
@@ -131,7 +131,11 @@ public class UpdateGroupRegistrationActivity extends AppCompatActivity {
         loadRegistration();
         conn1();
 
+        pd = new ProgressDialog(UpdateGroupRegistrationActivity.this);
+        pd.setMessage("Loading group data...");
+        pd.show();
         connLoadCount();
+
 
 
 
@@ -149,7 +153,7 @@ public class UpdateGroupRegistrationActivity extends AppCompatActivity {
         if (arrayList != null ) {
             TextView countText = (TextView) findViewById(R.id.txtGroupSlotCount);
             countText.setText("Slot available:" + arrayList.size()+ " / " + seatAvailable);
-
+            pd.dismiss();
         }
     }
 
@@ -674,7 +678,7 @@ public class UpdateGroupRegistrationActivity extends AppCompatActivity {
                             }
 
                             @Override
-                            public void messageArrived(String topic, MqttMessage message) throws Exception {
+                                public void messageArrived(String topic, MqttMessage message) throws Exception {
                                 String strMessage = new String(message.getPayload());
                                 strMessage = Action.hexToAscii(strMessage);
                                 JSONObject obj = new JSONObject(strMessage);

@@ -84,6 +84,25 @@
                 android:layout_height="wrap_content"
                 android:text="Seminar" />
 
+            <CheckBox
+                android:id="@+id/chkBoxSub14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Performance" />
+
+            <CheckBox
+                android:id="@+id/chkBoxSub15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Camp" />
+
+            <CheckBox
+                android:id="@+id/chkBoxSub16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Annual General Meeting" />
+
+
 
         </LinearLayout>
 
@@ -126,12 +145,35 @@
                 android:text="Workshop" />
 
             <CheckBox
+                android:id="@+id/chkBoxSub17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nite" />
+
+            <CheckBox
+                android:id="@+id/chkBoxSub18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Conference" />
+
+            <CheckBox
+                android:id="@+id/chkBoxSub19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sports Carnival" />
+
+            <CheckBox
+                android:id="@+id/chkBoxSub20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Treasure Hunt" />
+
+
+            <CheckBox
                 android:id="@+id/chkBoxSub13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Others" />
-
-
 
         </LinearLayout>
 
